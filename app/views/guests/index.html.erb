@@ -1,0 +1,27 @@
+<h1>Invitación a la Boda</h1>
+
+<% if flash[:notice] %>
+  <p class="notice"><%= flash[:notice] %></p>
+<% elsif flash[:alert] %>
+  <p class="alert"><%= flash[:alert] %></p>
+<% end %>
+
+<%= form_with(model: Guest.new, local: false) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div>
+    <%= form.check_box :attending %>
+    <%= form.label :attending, "Confirmar asistencia" %>
+  </div>
+
+  <%= form.submit "Confirmar Asistencia" %>
+<% end %>
+
