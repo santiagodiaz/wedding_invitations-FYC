@@ -15,4 +15,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  match '*path', via: :options, to: ->(env) { [204, { 'Content-Type' => 'text/plain' }, []] }
 end

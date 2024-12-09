@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_23_205224) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_09_201953) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,5 +20,15 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_23_205224) do
     t.boolean "attending"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "phone"
+    t.boolean "partner", default: false, null: false
+    t.string "partners_name", default: [], null: false, array: true
+    t.boolean "children_attending", default: false, null: false
+    t.integer "children_quantity", default: 0, null: false
+    t.boolean "assist_church", default: false, null: false
+    t.boolean "dietary_restrictions", default: false, null: false
+    t.string "dietary_restrictions_indications"
+    t.string "other_food_preference"
+    t.text "message"
   end
 end

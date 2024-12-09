@@ -3,6 +3,8 @@ source "https://rubygems.org"
 # ruby version
 ruby "3.3.1"
 
+gem 'rack-cors', '~> 2.0'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.2"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
@@ -43,6 +45,9 @@ group :development, :test do
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
+
+  gem 'pry-byebug', '~> 3.9', platform: :mri
+  gem 'pry-rails', '~> 0.3.11'
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
