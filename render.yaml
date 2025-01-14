@@ -1,7 +1,7 @@
 databases:
-  - name: wedding_invitations
-    databaseName: wedding_invitations
-    user: wedding_invitations
+  - name: wedding_invitations_fyc
+    databaseName: wedding_invitations_fyc
+    user: wedding_invitations_fyc
     plan: free
 
 services:
@@ -15,7 +15,7 @@ services:
     envars:
       - key: DATABASE_URL
         fromDatabase:
-          name: wedding_invitations
+          name: wedding_invitations_fyc
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync:false- key: WEB_CONCURRENCY
