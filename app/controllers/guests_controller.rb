@@ -1,5 +1,7 @@
 class GuestsController < ApplicationController
   def index
+    @guests = Guest.all
+    render 'guests/index', guests: @guests
   end
 
   def create

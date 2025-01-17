@@ -1,27 +1,28 @@
-<h1>Invitación a la Boda</h1>
+<h1>Guests:</h1>
 
-<% if flash[:notice] %>
-  <p class="notice"><%= flash[:notice] %></p>
-<% elsif flash[:alert] %>
-  <p class="alert"><%= flash[:alert] %></p>
-<% end %>
-
-<%= form_with(model: Guest.new, local: false) do |form| %>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email %>
-  </div>
-
-  <div>
-    <%= form.check_box :attending %>
-    <%= form.label :attending, "Confirmar asistencia" %>
-  </div>
-
-  <%= form.submit "Confirmar Asistencia" %>
-<% end %>
-
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Asiste?</th>
+    <th>Acompañantes?</th>
+    <th>Nombres de acompañantes</th>
+    <th>Niños?</th>
+    <th>Cantidad de niños</th>
+    <th>Restricciones de dieta?</th>
+    <th>Cuáles restricciones?</th>
+    <th>Created at</th>
+  </tr>
+  <% @guests.each do |guest| %>
+    <tr>
+      <td><%= guest.name %></td>
+      <td><%= guest.attending %></td>
+      <td><%= guest.partner %></td>
+      <td><%= guest.partners_name %></td>
+      <td><%= guest.children_attending %></td>
+      <td><%= guest.children_quantity %></td>
+      <td><%= guest.dietary_restrictions %></td>
+      <td><%= guest.dietary_restrictions_indications %></td>
+      <td><%= guest.created_at %></td>
+    </tr>
+  <% end %>
+</table>
